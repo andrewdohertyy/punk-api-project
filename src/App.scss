@@ -1,5 +1,40 @@
+@use "./Components/Main/Main.scss";
+
+
 * {
   margin: 0;
   padding: 0;
-  color: lightgreen;
+  color: brown;
+}
+
+.container {
+
+  border: solid 2px white;
+  text-align: center;
+  margin: 5px;
+  background-color: lightgray;
+
+  &__grid {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+
+    border: solid 2px white;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 10px;
+      gap: 10px;
+      margin: 30px;
+
+    }
+  } 
+
 }
