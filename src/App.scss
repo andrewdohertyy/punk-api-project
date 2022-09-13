@@ -1,5 +1,7 @@
 @use "./Components/Main/Main.scss";
-
+@use "./Components/BeerCard/BeerCard.scss";
+@use "./Components/Search/Search.scss";
+@use "./Components/Nav/Nav.scss";
 
 * {
   margin: 0;
@@ -8,33 +10,10 @@
 }
 
 .container {
+  margin: 10px;
 
-  border: solid 2px white;
-  text-align: center;
-  margin: 5px;
-  background-color: lightgray;
-
-  &__grid {
-    margin-bottom: 20px;
+  &__header {
+    padding: 30px;
+    font-size: xx-large;
   }
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-
-    border: solid 2px white;
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
-    
-    &__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      padding: 10px;
-      gap: 10px;
-      margin: 30px;
-
-    }
-  } 
-
 }

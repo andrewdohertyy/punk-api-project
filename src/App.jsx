@@ -1,39 +1,46 @@
 import Main from "./Components/Main/Main"
 import './App.scss';
-import beerData from "./Data/beer";
 import Nav from "./Components/Nav/Nav";
+import Search from "./Components/Search/Search";
+import { useState } from "react";
 
 function App() {
 
-  //function for getting the information about each individual beer
-  const beersJSX = beerData.map((beer) => {
-    return (
-      <Main image={beer.image_url} name={beer.name} info={beer.description} percentage={beer.abv}/>
-    )
-  })
+const [beers, setBeers] = useState([]);
+
+const getBeers = async () => {
+  const url = "https://api.punkapi.com/v2/beers";
+  const res = await fetch(url);
+  const data = await res.json();
+  setBeers(data)
+} 
+getBeers();
+console.log(beers);
 
 
+const highAlcoholFilter = beers.filter((beer)  => beer.abv >= 6);
+const highAcidityFilter = beers.filter((beer)  => beer.ph < 4
+ );
 
 
-  
-
-
-
-console.log("i work");
 
   return (
     <div className="container">
-      <header>
-        <h1>PUNK API PROJECT</h1>
+      <header className="container__header">
+        <h1>PUNK API</h1>
       </header>
 
         <div>
         <Nav />
         </div>
 
+        <div>
+        <Search />
+        </div>
 
-        <div className='container__grid'>
-          {beersJSX}
+
+        <div>
+          <Main beers={beers}/>
         </div>
 
         <div>

@@ -4,10 +4,12 @@ const Nav = () => {
   return (
     <aside>
     <div className="dropdown">
-        <input type="search" placeholder='search here...' src='./Data/search.png'/>
-        <button>High Alcohol</button>
-        <button>Classic Range</button>
-        <button>High Acidity</button>
+      <select className='dropdown__select' name="select">
+        <option value="none">Filter Options</option>
+        <option>High Alcohol</option>
+        <option>Classic Range</option>
+        <option >High Acidity</option>
+      </select>
     </div>
     </aside>
   )

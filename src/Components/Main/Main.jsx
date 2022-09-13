@@ -1,20 +1,23 @@
 import React from 'react'
+import BeerCard from '../BeerCard/BeerCard'
 
-const Main = (props) => {
 
-    const { image, name, info, percentage} = props
+const Main = ({ beers }) => {
 
 
   return (
-
-    <div className='beer'>
-        <img className='beer__image' src={image} alt="" />
-        <h2 className='beer__title'><b>{name}</b></h2>
-        <p className='beer__info'>{info}</p>
-        <h4 className='beer__percentage'>ABV(%) {percentage}%</h4>
-        <button className='beer__moreinfo'>More Info</button>
+    <div className='container__grid'>
+      {beers.map((beer) => (
+        <BeerCard
+          key={beer.id}
+          image={beer.image_url}
+          name={beer.name}
+          tagline={beer.tagline}
+          abv={beer.abv}
+        />
+      ))}
     </div>
-  )
-}
+  );
+};
 
 export default Main
