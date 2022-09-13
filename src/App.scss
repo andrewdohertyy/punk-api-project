@@ -2,20 +2,46 @@
 @use "./Components/BeerCard/BeerCard.scss";
 @use "./Components/Search/Search.scss";
 @use "./Components/Nav/Nav.scss";
+@use "./Components/Header/Header.scss";
+@use "./Components/Footer/Footer.scss";
 
 * {
   margin: 0;
   padding: 0;
-  color: brown;
-  background-color: lightgray;
 }
 
 .container {
-  margin: 10px;
-  
+  text-align: center;
+  height: auto;
 
-  &__header {
-    padding: 30px;
-    font-size: xx-large;
+  &__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+  .container {
+
+    text-align: center;
+    height: auto;
+  
+    &__row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+  
+    &__grid {
+      margin-bottom: 20px;
+    }
   }
 }

@@ -33,6 +33,17 @@ const Nav = ({
           <option>High Acidity</option>
         </select>
       </div>
+      <div className="sort">
+        <select
+          className="sort__select"
+          name="Sort-By"
+        >
+          <option>Sort:</option>
+          <option>Strongest</option>
+          <option>Weakness </option>
+          <option>Another Option</option>
+        </select>
+      </div>
     </aside>
   );
 };

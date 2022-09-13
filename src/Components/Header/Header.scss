@@ -1,0 +1,48 @@
+
+
+
+.header {
+    padding: 20px;
+    font-size: xx-large;
+    text-align: center;
+    position: relative;
+    text-align: center;
+
+    &__image {
+        width: 80vw;
+        height: 250px;
+    }
+    &__title {
+        position: absolute;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__text {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+    padding: 10px;
+    &__image {
+        width: 95vw;
+        height: 250px;
+    }
+    
+    &__title {
+        top: 35%;
+    }
+    &__text {
+        display: unset;
+        position: absolute;
+        color: white;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: large;
+    }
+    }
+}

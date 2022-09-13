@@ -6,9 +6,9 @@ const BeerCard = ({ image, name, tagline, abv }) => {
     <div className="beer">
       <div>
         <img className="beer__image" src={image} alt={name} />
-        <h2 className="beer__title">
-          <b>{name}</b>
-        </h2>
+        <h3 className="beer__title">
+          <b>{name.toUpperCase()}</b>
+        </h3>
         <p className="beer__info">{tagline}</p>
         <h4 className="beer__percentage">ABV(%) {abv}</h4>
         <button className="beer__moreinfo">More Info</button>

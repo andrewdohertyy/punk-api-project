@@ -1,16 +1,23 @@
-//import { useState } from "react";
+import { useState } from "react";
 
 import React from 'react'
 
-const Search = ({setQuery}) => {
+const Search = ({beers, setBeers}) => {
+  
+  const [query, setQuery] = useState("");
 
-
+const handleSearch = (e) => {
+  setQuery(e.target.value);
+  console.log(query);
+  const searchFilter = beers.filter((beer) => beer.name.toLowerCase().includes(query))
+  setBeers(searchFilter);
+}
 
 
 
   return (
     <div className="search">
-        <input onChange={e => setQuery(e.target.value)} className="search__input"  type="search" placeholder='Search here...' src='./Data/search.png'/>
+        <input onKeyPress={handleSearch} className="search__input"  type="text" placeholder='Search here...'/>
     </div>
   )
 }

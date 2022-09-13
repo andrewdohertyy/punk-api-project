@@ -2,11 +2,13 @@ import "./App.scss";
 import Main from "./Components/Main/Main";
 import Nav from "./Components/Nav/Nav";
 import Search from "./Components/Search/Search";
+import Header from "./Components/Header/Header";
 import { useState, useEffect } from "react";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [beers, setBeers] = useState([]);
-  const [query, setQuery] = useState("");
+  
 
   const getBeers = async () => {
     const url = "https://api.punkapi.com/v2/beers";
@@ -33,49 +35,45 @@ function App() {
   // setBeers(classicAgeFilter);
   // }
 
- 
-
-
-
-
-const getSearchFilter = () => {
-  console.log(query);
-  const searchFilter = beers.filter((beer) => beer.name.toLowerCase().includes(query))
-  setQuery(searchFilter);
-}
-
-
-
-
-
 
 
   return (
-    <div className="container">
-      <header className="container__header">
-        <h1>PUNK API</h1>
+    <>
+      <header>
+        <Header header={"PUNK API"}/>
       </header>
 
-      <div>
-        <Nav
-          getAlcoholFilter={getAlcoholFilter}
-          getAcidityFilter={getAcidityFilter}
-          getBeers={getBeers}
-        />
-      </div>
 
-      <div>
-        <Search getSearchFilter={getSearchFilter} setQuery={setQuery}/>
-      </div>
+      <div className="container">
+        <div className="container__row">
+          <aside>
+            <Nav
+              getAlcoholFilter={getAlcoholFilter}
+              getAcidityFilter={getAcidityFilter}
+              getBeers={getBeers}
+            />
+          </aside>
+
+          <div>
+            <Search 
+              beers={beers}
+              setBeers={setBeers} 
+            />
+          </div>
+        </div>
+      
 
       <div>
         <Main beers={beers} />
       </div>
 
       <div>
-        <footer></footer>
+        <footer>
+          <Footer />
+        </footer>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
