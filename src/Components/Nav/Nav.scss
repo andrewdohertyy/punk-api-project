@@ -1,7 +1,11 @@
 .dropdown {
     padding: 20px;
 
-    &__input {
+    &__select {
         margin: 20px;
+        font-size: xx-large;
+        border: none;
+        background-color: lightgray;
+        cursor: pointer;
     }
 }

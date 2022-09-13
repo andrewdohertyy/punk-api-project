@@ -4,7 +4,7 @@
 }
 
 .beer {
-    border: solid white 2px;
+    border: solid white 4px;
     padding: 20px;
     gap: 10px;
 
@@ -24,6 +24,8 @@
     }
     &__moreinfo {
         padding: 5px;
-        margin: 5px;
+        background-color: white;
+        cursor: pointer;
+        margin: 15px;
     }
 }

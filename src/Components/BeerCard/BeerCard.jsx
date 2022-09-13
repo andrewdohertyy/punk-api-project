@@ -6,11 +6,11 @@ const BeerCard = ({ image, name, tagline, abv }) => {
     <div className="beer">
       <div>
         <img className="beer__image" src={image} alt={name} />
-        <h3 className="beer__title">
+        <h2 className="beer__title">
           <b>{name}</b>
-        </h3>
+        </h2>
         <p className="beer__info">{tagline}</p>
-        <h4 className="beer__percentage">ABV(%) {abv}%</h4>
+        <h4 className="beer__percentage">ABV(%) {abv}</h4>
         <button className="beer__moreinfo">More Info</button>
       </div>
     </div>
