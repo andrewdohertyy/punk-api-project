@@ -5,7 +5,7 @@ const BeerCard = ({ image, name, tagline, abv }) => {
   return (
     <div className="beer">
       <div>
-        <img className="beer__image" src={image} alt={name} />
+        <img className="beer__image grow" src={image} alt={name} />
         <h3 className="beer__title">
           <b>{name.toUpperCase()}</b>
         </h3>

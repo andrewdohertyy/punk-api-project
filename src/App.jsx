@@ -14,8 +14,6 @@ function App() {
     setSearchValue(e.target.value);
   };
 
-
-
   const getBeers = async () => {
     const res = await fetch(url);
     const data = await res.json();
@@ -26,34 +24,18 @@ function App() {
     getBeers();
   },[url]);
 
-  const getAlcoholFilter = () => {
-    const highAlcoholFilter = beers.filter((beer) => beer.abv >= 6);
-    setBeers(highAlcoholFilter);
-  };
 
-  const getAcidityFilter = () => {
-    const highAcidityFilter = beers.filter((beer) => beer.ph < 4);
-    setBeers(highAcidityFilter);
-  };
 
-  const getAgeFilter = () => {
-    setURL("https://api.punkapi.com/v2/beers?brewed_before=01-2010?page=1&per_page=30")
-  };
-
-  const clearFilters = (e) => {
-    getBeers()
-    setURL("https://api.punkapi.com/v2/beers?per_page=30")
-  }
   return (
     <>
       <div className="container">
         <div className="container__row">
           <aside>
             <Nav
-              getAlcoholFilter={getAlcoholFilter}
-              getAcidityFilter={getAcidityFilter}
-              getAgeFilter={getAgeFilter}
-              clearFilters={clearFilters}
+              beers={beers}
+              getBeers={getBeers}
+              setURL={setURL}
+              setBeers={setBeers}
             />
           </aside>
         </div>
