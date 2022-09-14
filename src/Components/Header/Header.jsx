@@ -1,5 +1,5 @@
 import React from 'react'
-import beerImg from '../../Assets/beer.png'
+import beerImg from '../../assets/beer.png'
 
 const Header = ({header}) => {
   return (

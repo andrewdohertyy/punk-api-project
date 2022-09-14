@@ -1,24 +1,30 @@
 import "./App.scss";
-import Main from "./Components/Main/Main";
-import Nav from "./Components/Nav/Nav";
-import Search from "./Components/Search/Search";
-import Header from "./Components/Header/Header";
+import Main from "./containers/Main/Main";
+import Nav from "./containers/Nav/Nav";
 import { useState, useEffect } from "react";
-import Footer from "./Components/Footer/Footer";
+import Footer from "./containers/Footer/Footer";
 
 function App() {
   const [beers, setBeers] = useState([]);
-  
+  const [searchValue, setSearchValue] = useState("");
+  const [url, setURL] = useState("https://api.punkapi.com/v2/beers?per_page=30")
+ 
+
+  const getSearchValue = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+
 
   const getBeers = async () => {
-    const url = "https://api.punkapi.com/v2/beers";
     const res = await fetch(url);
     const data = await res.json();
     setBeers(data);
   };
+
   useEffect(() => {
     getBeers();
-  }, []);
+  },[url]);
 
   const getAlcoholFilter = () => {
     const highAlcoholFilter = beers.filter((beer) => beer.abv >= 6);
@@ -30,48 +36,42 @@ function App() {
     setBeers(highAcidityFilter);
   };
 
-  // const getAgeFilter = () => {
-    //const classicAgeFilter = beers.filter((beer) => beer.first_brewed);
-  // setBeers(classicAgeFilter);
-  // }
+  const getAgeFilter = () => {
+    setURL("https://api.punkapi.com/v2/beers?brewed_before=01-2010?page=1&per_page=30")
+  };
 
-
-
+  const clearFilters = (e) => {
+    getBeers()
+    setURL("https://api.punkapi.com/v2/beers?per_page=30")
+  }
   return (
     <>
-      <header>
-        <Header header={"PUNK API"}/>
-      </header>
-
-
       <div className="container">
         <div className="container__row">
           <aside>
             <Nav
               getAlcoholFilter={getAlcoholFilter}
               getAcidityFilter={getAcidityFilter}
-              getBeers={getBeers}
+              getAgeFilter={getAgeFilter}
+              clearFilters={clearFilters}
             />
           </aside>
-
-          <div>
-            <Search 
-              beers={beers}
-              setBeers={setBeers} 
-            />
-          </div>
         </div>
-      
 
-      <div>
-        <Main beers={beers} />
-      </div>
+        <div>
+          <Main
+            beers={beers}
+            setBeers={setBeers}
+            searchValue={searchValue}
+            getSearchValue={getSearchValue}
+          />
+        </div>
 
-      <div>
-        <footer>
-          <Footer />
-        </footer>
-      </div>
+        <div>
+          <footer>
+            <Footer />
+          </footer>
+        </div>
       </div>
     </>
   );

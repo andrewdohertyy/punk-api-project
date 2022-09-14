@@ -1,9 +1,9 @@
-@use "./Components/Main/Main.scss";
-@use "./Components/BeerCard/BeerCard.scss";
-@use "./Components/Search/Search.scss";
-@use "./Components/Nav/Nav.scss";
-@use "./Components/Header/Header.scss";
-@use "./Components/Footer/Footer.scss";
+@use "./containers/Main/Main.scss";
+@use "./components/BeerCard/BeerCard.scss";
+@use "./components/Search/Search.scss";
+@use "./containers/Nav/Nav.scss";
+@use "./components/Header/Header.scss";
+@use "./containers/Footer/Footer.scss";
 
 * {
   margin: 0;
