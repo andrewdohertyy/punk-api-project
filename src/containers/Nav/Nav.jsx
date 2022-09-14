@@ -35,28 +35,76 @@ const Nav = ({setURL, beers, setBeers, getBeers }) => {
     }
   };
 
+
+  const sortByName = () => {
+  const nameAscending = [...beers].sort((a, b) => a.name > b.name ? 1 : -1,);
+  setBeers(nameAscending);
+  }
+
+  const sortByEBC = () => {
+  const ebcAscending = [...beers].sort((a, b) => a.ebc - b.ebc);
+  setBeers(ebcAscending)
+  }
+
+
+  const sortByABV = () => {
+  const abvAscending = [...beers].sort((a, b) => a.abv - b.abv);
+  setBeers(abvAscending)
+  }
+
+
+  const handleSort = (e) => {
+    if (e.target.value === "Name A-Z") {
+      sortByName();
+    } else if (e.target.value === "ABV Low-High") {
+      sortByABV();
+    } else if (e.target.value === "Sort:") {
+      clearFilters();
+    } else if (e.target.value === "EBC Low-High") {
+      sortByEBC();
+    }
+  };
+
+
+
   return (
     <>
       <div>
         <img onClick={getAgeFilter} className="image" src={brewDog} alt="" />
       </div>
+
       <header>
         <Header header={"PUNK API"} />
       </header>
-      <div className="dropdown">
-        <select
-          onChange={handleSelect}
-          className="dropdown__select"
-          name="select"
-        >
-          <option>All</option>
-          <option>High Acidity</option>
-          <option>High Alcohol</option>
-          <option>Classic Range</option>
-        </select>
+
+      <div className="nav__container">
+
+        <div className="dropdown" >
+          <select
+            onChange={handleSelect}
+            className="dropdown__select"
+            name="select"
+          >
+            <option>All</option>
+            <option>High Acidity</option>
+            <option>High Alcohol</option>
+            <option>Classic Range</option>
+          </select>
+        </div>
+
+        <div className="sort">
+          <select onChange={handleSort} className="sort__select" name="Sort-By">
+            <option>Sort:</option>
+            <option>Name A-Z</option>
+            <option>ABV Low-High</option>
+            <option>EBC Low-High</option>
+          </select>
+        </div>
+
         <div className="dropdown__length">
           <h3>Filtered Items: {beers.length}</h3>
         </div>
+
       </div>
     </>
   );

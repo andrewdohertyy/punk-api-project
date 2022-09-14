@@ -1,9 +1,17 @@
 .search {
+
     padding: 20px;
 
+
     &__input {
+        background-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-512.png');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 30px;
+        font-size: x-large;
+        padding: 12px 20px 12px 40px;
         text-align: center;
-        border-style: none;
-        font-size: xx-large;
-    }
+        margin-bottom: 12px;
+        border: none;
+      }
 }
