@@ -14,11 +14,10 @@ const Main = ({ beers, setBeers, searchValue, getSearchValue }) => {
 
   const beerToJSX = (beers) => {
     return searchBeers(beers, searchValue).map((beer, index) => {
-      console.log(beerToJSX);
       return (
         <div key={index}>
           <BeerCard
-            key={beer.id}
+            beers={beers}
             image={beer.image_url}
             name={beer.name}
             tagline={beer.tagline}

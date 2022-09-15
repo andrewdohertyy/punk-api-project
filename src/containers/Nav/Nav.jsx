@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header/Header"
 import brewDog from '../../assets/brewdog.jpeg'
+import {Link} from 'react-router-dom'
 
 const Nav = ({setURL, beers, setBeers, getBeers }) => {
 
@@ -46,7 +47,6 @@ const Nav = ({setURL, beers, setBeers, getBeers }) => {
   setBeers(ebcAscending)
   }
 
-
   const sortByABV = () => {
   const abvAscending = [...beers].sort((a, b) => a.abv - b.abv);
   setBeers(abvAscending)
@@ -70,7 +70,7 @@ const Nav = ({setURL, beers, setBeers, getBeers }) => {
   return (
     <>
       <div>
-        <img onClick={getAgeFilter} className="image" src={brewDog} alt="" />
+        <Link to="/"><img className="image" src={brewDog} alt="" /></Link>
       </div>
 
       <header>

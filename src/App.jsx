@@ -2,7 +2,9 @@ import "./App.scss";
 import Main from "./containers/Main/Main";
 import Nav from "./containers/Nav/Nav";
 import { useState, useEffect } from "react";
+import MoreInfo from "./components/MoreInfo/MoreInfo"
 import Footer from "./containers/Footer/Footer";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
   const [beers, setBeers] = useState([]);
@@ -20,14 +22,17 @@ function App() {
     setBeers(data);
   };
 
+
+
   useEffect(() => {
     getBeers();
-  },[url]);
+  },[url], [searchValue]);
 
-  
+ 
 
 
   return (
+    <Router>
     <>
       <div className="container">
         <div className="container__row">
@@ -40,7 +45,9 @@ function App() {
             />
           </aside>
         </div>
-
+         
+        <Routes>
+          <Route path="/" element={
         <div>
           <Main
             beers={beers}
@@ -49,7 +56,14 @@ function App() {
             getSearchValue={getSearchValue}
           />
         </div>
+        }
+        ></Route>
+        <Route path="/moreInfo/:beersID" element={
+          <MoreInfo beers={beers}/>
+        }></Route>
+        <Route path="moreInfo" element={< MoreInfo/>}></Route>
 
+        </Routes>
         <div>
           <footer>
             <Footer />
@@ -57,6 +71,7 @@ function App() {
         </div>
       </div>
     </>
+    </Router>
   );
 }
 
