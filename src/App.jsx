@@ -47,7 +47,8 @@ function App() {
         </div>
          
         <Routes>
-          <Route path="/" element={
+          
+          <Route exact path="/" element={
         <div>
           <Main
             beers={beers}
@@ -58,11 +59,14 @@ function App() {
         </div>
         }
         ></Route>
-        <Route path="/moreInfo/:beersID" element={
+
+
+        <Route path="/moreInfo/:id" element={
           <MoreInfo beers={beers}/>
         }></Route>
-        <Route path="moreInfo" element={< MoreInfo/>}></Route>
 
+        {/* <Route exact path="/moreInfo" element={< MoreInfo/>}></Route> */}
+        
         </Routes>
         <div>
           <footer>

@@ -16,7 +16,9 @@ const Main = ({ beers, setBeers, searchValue, getSearchValue }) => {
     return searchBeers(beers, searchValue).map((beer, index) => {
       return (
         <div key={index}>
+          
           <BeerCard
+            id={beer.id}
             beers={beers}
             image={beer.image_url}
             name={beer.name}

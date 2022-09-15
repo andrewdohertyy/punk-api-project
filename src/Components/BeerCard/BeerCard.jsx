@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
-const BeerCard = ({beers, image, name, tagline, abv}) => {
+const BeerCard = ({image, name, tagline, abv, id}) => {
 
   return (
     <div className="beer">
@@ -12,7 +12,7 @@ const BeerCard = ({beers, image, name, tagline, abv}) => {
         </h3>
         <p className="beer__info">{tagline}</p>
         <h4 className="beer__percentage">ABV(%) <br />{abv}</h4>
-        <Link to={`/moreInfo/${beers.id}`}><button className="beer__moreinfo">More Info</button></Link>
+        <Link to={`/moreInfo/${id}`}><button className="beer__moreinfo">More Info</button></Link>
       </div>
     </div>
   );

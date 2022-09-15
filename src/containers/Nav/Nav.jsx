@@ -70,7 +70,7 @@ const Nav = ({setURL, beers, setBeers, getBeers }) => {
   return (
     <>
       <div>
-        <Link to="/"><img className="image" src={brewDog} alt="" /></Link>
+        <Link id="logo" to="/"><img className="image" src={brewDog} alt="" /></Link>
       </div>
 
       <header>

@@ -1,0 +1,80 @@
+
+.title {
+    padding: 30px;
+    margin: 10px;
+}
+
+.moreinfo {
+
+    border: solid lightgray 3px;
+    padding: 20px;
+    background-color: #EAEAEA;
+    border-radius: 20px;
+    box-shadow: 3px 4px grey;
+
+
+    &__image {
+        width: 20vw;
+        height: 30vh;
+    }
+    &__button {
+        margin: 20px;
+        border-radius: 15px;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+    &__name {
+        padding: 10px;
+    }
+    &__description {
+        padding: 10px;
+    }
+    &__food {
+        padding: 20px;
+    }
+    &__abv {
+        padding: 10px;
+    }
+    
+}
+
+.home {
+    padding: 20px;
+}
+// .nav__container {
+//     display: none;
+// }
+// .header {
+//     display: none;
+// }
+
+@media screen and (min-width: 768px){
+
+    .moreinfo {
+        width: 50%;
+        margin-left: 170px;
+    
+        &__image {
+            width: 90px;
+            height: 300px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+    .moreinfo {
+        width: 50%;
+        margin-left: 235px;
+}
+}
+
+@media screen and (min-width: 1440px){
+
+    .moreinfo {
+        width: 50%;
+        margin-left: 350px;
+}
+}
