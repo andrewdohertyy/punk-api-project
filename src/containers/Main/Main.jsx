@@ -3,7 +3,7 @@ import BeerCard from '../../components/BeerCard/BeerCard';
 import Search from '../../components/Search/Search';
 
 
-const Main = ({ beers, setBeers, searchValue, getSearchValue }) => {
+const Main = ({ beers, setBeers, searchValue, getSearchValue, hideNav }) => {
 
 
   const searchBeers = (beers, searchValue) => {
@@ -18,6 +18,7 @@ const Main = ({ beers, setBeers, searchValue, getSearchValue }) => {
         <div key={index}>
           
           <BeerCard
+            hideNav={hideNav}
             id={beer.id}
             beers={beers}
             image={beer.image_url}

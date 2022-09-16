@@ -3,7 +3,7 @@
 
 <p>This project was up to now my favourite as going into it react seemed so difficult. However coming towards then end of the project i had recapped alot of what i learnt and fully seen the benefits of using react to create a webpage.
 
-The goal was to create a page with a list of beers displayed using an API. To add user interaction there must also be a search and multiple filters applied.
+The goal was to create a page with a list of beers displayed using an API. To add user interaction there must also be a search and multiple filters applied. The webpage must also be responsive and built mobile first.
 
 To use the project you can simply scroll and get information on the beers. If you click more info then a detailed description of the individual beer will be display. You can then return home by clicking the logo on the top.
 

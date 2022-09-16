@@ -1,0 +1,28 @@
+.footer {
+    padding: 20px;
+    margin-top: 40px;
+    background-color: lightgray;
+    width: 90vw;
+
+    &__input {
+        padding: 10px 30px ;
+    }
+    &__text {
+        padding: 20px;
+    }
+    &__button {
+        padding: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        border: solid black 1px;
+        border-radius: 25px;
+        background-color: black;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .footer {
+        width: 100vw;
+    }
+}

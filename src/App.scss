@@ -15,13 +15,20 @@
   height: auto;
 
   &__row {
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
   }
 }
+
+  .logo__image{
+  height: 50px;
+  width: 50px;
+  padding: 20px;
+
+  }
 
 
 
