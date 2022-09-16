@@ -1,10 +1,20 @@
-things to add next: next and previous on more info 
-pages
+<h1 align="center">Hi 👋</h1>
+<h2 align="center"> Welcome to my latest project "Punk-API"</h2>
 
-what worked well getting search and filters, designing 
-what was hard, setting up routes, testing
+<p align="center">This project was up to now my favourite as going into it react seemed so difficult. However coming towards then end of the project i had recapped alot of what i learnt and fully seen the benefits of using react to create a webpage.
 
-<h1 align="center">Hi 👋, I'm Andrew</h1>
+My favourite part was adding routes to the page and getting it to display a new link on button click. As well as this i really emjoyed the styling and took inspiration from the brewdog website. I got the search and filters to work suprisingly easily having just learnt this which i am very proud of too. 
+
+What i will add in the future is multiple pages, so if the user wanted to see more beers then can have page 2, page 3 etc. On the more info page i would also like to implement a previous/next option so the user can search through them all. Also to have more tests for DOM specific events.
+
+
+Enjoy my project! </p>
+
+
+
+
+
+
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/https://www.linkedin.com/in/andrew-doherty-054781a1/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/andrew-doherty-054781a1/" height="30" width="40" /></a>
