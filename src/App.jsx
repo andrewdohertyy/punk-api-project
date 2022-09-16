@@ -20,6 +20,8 @@ function App() {
     setSearchValue(e.target.value);
   };
 
+  
+
   const getBeers = async () => {
     const res = await fetch(url);
     const data = await res.json();
@@ -34,6 +36,7 @@ function App() {
     [searchValue]
   );
 
+
   const hideNav = () => {
     setToggleNav(!toggleNav);
   };
@@ -46,6 +49,7 @@ function App() {
             <aside>
               {toggleNav && (
                 <Nav
+                 
                   beers={beers}
                   getBeers={getBeers}
                   setURL={setURL}
@@ -53,16 +57,16 @@ function App() {
                 />
               )}
               {!toggleNav && (
-                <div className="logo">
+                
                 <Link id="logo" to="/">
                   <img
+                    className="image"
                     onClick={hideNav}
-                    className="logo__image container__image"
                     src={brewdog}
                     alt=""
                   />
                 </Link>
-                </div>
+                
               )}
             </aside>
           </div>

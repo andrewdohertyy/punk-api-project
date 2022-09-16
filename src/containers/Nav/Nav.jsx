@@ -1,12 +1,13 @@
 import React from "react";
-import Header from "../../components/Header/Header"
-import brewDog from '../../assets/brewdog.jpeg'
-import {Link} from 'react-router-dom'
+import Header from "../../components/Header/Header";
+import brewDog from "../../assets/brewdog.jpeg";
+import { Link } from "react-router-dom";
 
-const Nav = ({setURL, beers, setBeers, getBeers }) => {
-
+const Nav = ({ setURL, beers, setBeers, getBeers }) => {
   const getAgeFilter = () => {
-    setURL("https://api.punkapi.com/v2/beers?brewed_before=01-2010?page=1&per_page=30")
+    setURL(
+      "https://api.punkapi.com/v2/beers?brewed_before=01-2010?page=1&per_page=30"
+    );
   };
 
   const getAlcoholFilter = () => {
@@ -19,10 +20,10 @@ const Nav = ({setURL, beers, setBeers, getBeers }) => {
     setBeers(highAcidityFilter);
   };
 
-  const clearFilters = (e) => {
-    getBeers()
-    setURL("https://api.punkapi.com/v2/beers?per_page=30")
-  }
+  const clearFilters = () => {
+    getBeers();
+    setURL("https://api.punkapi.com/v2/beers?per_page=30");
+  };
 
   const handleSelect = (e) => {
     if (e.target.value === "High Alcohol") {
@@ -36,22 +37,20 @@ const Nav = ({setURL, beers, setBeers, getBeers }) => {
     }
   };
 
-
   const sortByName = () => {
-  const nameAscending = [...beers].sort((a, b) => a.name > b.name ? 1 : -1,);
-  setBeers(nameAscending);
-  }
+    const nameAscending = [...beers].sort((a, b) => (a.name > b.name ? 1 : -1));
+    setBeers(nameAscending);
+  };
 
   const sortByEBC = () => {
-  const ebcAscending = [...beers].sort((a, b) => a.ebc - b.ebc);
-  setBeers(ebcAscending)
-  }
+    const ebcAscending = [...beers].sort((a, b) => a.ebc - b.ebc);
+    setBeers(ebcAscending);
+  };
 
   const sortByABV = () => {
-  const abvAscending = [...beers].sort((a, b) => a.abv - b.abv);
-  setBeers(abvAscending)
-  }
-
+    const abvAscending = [...beers].sort((a, b) => a.abv - b.abv);
+    setBeers(abvAscending);
+  };
 
   const handleSort = (e) => {
     if (e.target.value === "Name A-Z") {
@@ -65,12 +64,12 @@ const Nav = ({setURL, beers, setBeers, getBeers }) => {
     }
   };
 
-
-
   return (
     <>
       <div>
-        <Link id="logo" to="/"><img className="image" src={brewDog} alt="" /></Link>
+        <Link id="logo" to="/">
+          <img className="image" src={brewDog} alt="" />
+        </Link>
       </div>
 
       <header>
@@ -78,8 +77,7 @@ const Nav = ({setURL, beers, setBeers, getBeers }) => {
       </header>
 
       <div className="nav__container">
-
-        <div className="dropdown" >
+        <div className="dropdown">
           <select
             onChange={handleSelect}
             className="dropdown__select"
@@ -104,7 +102,6 @@ const Nav = ({setURL, beers, setBeers, getBeers }) => {
         <div className="dropdown__length">
           <h3>Filtered Items: {beers.length}</h3>
         </div>
-
       </div>
     </>
   );

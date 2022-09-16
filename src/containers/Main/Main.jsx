@@ -1,11 +1,8 @@
-import React from 'react';
-import BeerCard from '../../components/BeerCard/BeerCard';
-import Search from '../../components/Search/Search';
-
+import React from "react";
+import BeerCard from "../../components/BeerCard/BeerCard";
+import Search from "../../components/Search/Search";
 
 const Main = ({ beers, setBeers, searchValue, getSearchValue, hideNav }) => {
-
-
   const searchBeers = (beers, searchValue) => {
     return beers.filter((beer) =>
       beer.name.toLowerCase().includes(searchValue.toLowerCase())
@@ -16,7 +13,6 @@ const Main = ({ beers, setBeers, searchValue, getSearchValue, hideNav }) => {
     return searchBeers(beers, searchValue).map((beer, index) => {
       return (
         <div key={index}>
-          
           <BeerCard
             hideNav={hideNav}
             id={beer.id}
@@ -31,16 +27,17 @@ const Main = ({ beers, setBeers, searchValue, getSearchValue, hideNav }) => {
     });
   };
 
-
-
   return (
     <>
       <div>
-        <Search beers={beers} setBeers={setBeers} getSearchValue={getSearchValue}/>
-
+        <Search
+          beers={beers}
+          setBeers={setBeers}
+          getSearchValue={getSearchValue}
+        />
       </div>
       <div className="container__grid">{beerToJSX(beers)}</div>
     </>
   );
 };
-export default Main
+export default Main;
