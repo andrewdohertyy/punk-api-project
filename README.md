@@ -1,14 +1,20 @@
 <h1 align="center">Hi 👋</h1>
 <h2 align="center"> Welcome to my latest project "Punk-API"</h2>
 
-<p align="center">This project was up to now my favourite as going into it react seemed so difficult. However coming towards then end of the project i had recapped alot of what i learnt and fully seen the benefits of using react to create a webpage.
+<p>This project was up to now my favourite as going into it react seemed so difficult. However coming towards then end of the project i had recapped alot of what i learnt and fully seen the benefits of using react to create a webpage.
+
+The goal was to create a page with a list of beers displayed using an API. To add user interaction there must also be a search and multiple filters applied.
+
+To use the project you can simply scroll and get information on the beers. If you click more info then a detailed description of the individual beer will be display. You can then return home by clicking the logo on the top.
 
 My favourite part was adding routes to the page and getting it to display a new link on button click. As well as this i really emjoyed the styling and took inspiration from the brewdog website. I got the search and filters to work suprisingly easily having just learnt this which i am very proud of too. 
 
 What i will add in the future is multiple pages, so if the user wanted to see more beers then can have page 2, page 3 etc. On the more info page i would also like to implement a previous/next option so the user can search through them all. Also to have more tests for DOM specific events.
 
 
-Enjoy my project! </p>
+Enjoy my project and please reach out to me with any feedback! </p>
+
+16/09/2022
 
 
 
