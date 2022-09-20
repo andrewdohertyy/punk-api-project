@@ -4,27 +4,33 @@ import brewDog from "../../assets/brewdog.jpeg";
 import { Link } from "react-router-dom";
 
 const Nav = ({ setURL, beers, setBeers, getBeers }) => {
+
+  //changes the URL when the classic filter is selected
   const getAgeFilter = () => {
     setURL(
       "https://api.punkapi.com/v2/beers?brewed_before=01-2010?page=1&per_page=30"
     );
   };
 
+  //shows beers above 6%
   const getAlcoholFilter = () => {
     const highAlcoholFilter = beers.filter((beer) => beer.abv >= 6);
     setBeers(highAlcoholFilter);
   };
 
+  //shows high acidity beers
   const getAcidityFilter = () => {
     const highAcidityFilter = beers.filter((beer) => beer.ph < 4);
     setBeers(highAcidityFilter);
   };
 
+  //defualt value
   const clearFilters = () => {
     getBeers();
     setURL("https://api.punkapi.com/v2/beers?per_page=30");
   };
 
+  //when a option is selected to choose the right function
   const handleSelect = (e) => {
     if (e.target.value === "High Alcohol") {
       getAlcoholFilter();
@@ -37,6 +43,7 @@ const Nav = ({ setURL, beers, setBeers, getBeers }) => {
     }
   };
 
+  //functions for sorting
   const sortByName = () => {
     const nameAscending = [...beers].sort((a, b) => (a.name > b.name ? 1 : -1));
     setBeers(nameAscending);
@@ -52,6 +59,7 @@ const Nav = ({ setURL, beers, setBeers, getBeers }) => {
     setBeers(abvAscending);
   };
 
+  //when the sort is select
   const handleSort = (e) => {
     if (e.target.value === "Name A-Z") {
       sortByName();
@@ -73,7 +81,7 @@ const Nav = ({ setURL, beers, setBeers, getBeers }) => {
       </div>
 
       <header>
-        <Header header={"PUNK API"} />
+        <Header header={"BREWDOG"} />
       </header>
 
       <div className="nav__container">

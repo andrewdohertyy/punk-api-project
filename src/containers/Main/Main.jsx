@@ -3,12 +3,15 @@ import BeerCard from "../../components/BeerCard/BeerCard";
 import Search from "../../components/Search/Search";
 
 const Main = ({ beers, setBeers, searchValue, getSearchValue, hideNav }) => {
+
+  //filter beer function
   const searchBeers = (beers, searchValue) => {
     return beers.filter((beer) =>
       beer.name.toLowerCase().includes(searchValue.toLowerCase())
     );
   };
 
+  //maps through the beers array and returns the values in beer card 
   const beerToJSX = (beers) => {
     return searchBeers(beers, searchValue).map((beer, index) => {
       return (

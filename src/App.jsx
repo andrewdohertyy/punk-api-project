@@ -9,6 +9,8 @@ import brewdog from "./assets/brewdog.jpeg";
 import { Link } from "react-router-dom";
 
 function App() {
+
+  //states are here
   const [beers, setBeers] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [url, setURL] = useState(
@@ -16,18 +18,22 @@ function App() {
   );
   const [toggleNav, setToggleNav] = useState(true);
 
+
+  //function for changing state with a search
   const getSearchValue = (e) => {
     setSearchValue(e.target.value);
   };
 
-  
 
+  //gets all the beers from api
   const getBeers = async () => {
     const res = await fetch(url);
     const data = await res.json();
     setBeers(data);
   };
 
+
+  //use effect set for all values that need it
   useEffect(
     () => {
       getBeers();
@@ -36,11 +42,13 @@ function App() {
     [searchValue]
   );
 
-
+    //when the use clicks the more info the nav will go away
   const hideNav = () => {
     setToggleNav(!toggleNav);
   };
 
+
+  //layout and routes
   return (
     <Router>
       <>

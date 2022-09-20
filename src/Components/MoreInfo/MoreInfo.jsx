@@ -4,8 +4,9 @@ import "./MoreInfo.scss"
 
 const MoreInfo = ({ beers }) => {
 
-
+  //set param to make link
   const { id } = useParams();
+  //new variable to find the clicked beer
   const clickedBeers = beers.filter((beer) => beer.id == id);
  
 
