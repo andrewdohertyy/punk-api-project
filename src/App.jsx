@@ -57,7 +57,7 @@ function App() {
             <aside>
               {toggleNav && (
                 <Nav
-                 
+                  brewdog={brewdog}
                   beers={beers}
                   getBeers={getBeers}
                   setURL={setURL}
