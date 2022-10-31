@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/andrewdohertyy/punk-api-project/static/css/main.eb2683b7.css",
-    "main.js": "/andrewdohertyy/punk-api-project/static/js/main.f52a26ad.js",
+    "main.js": "/andrewdohertyy/punk-api-project/static/js/main.d62a73df.js",
     "static/media/beer.png": "/andrewdohertyy/punk-api-project/static/media/beer.104e93a416a5bf662bfa.png",
     "index.html": "/andrewdohertyy/punk-api-project/index.html",
     "main.eb2683b7.css.map": "/andrewdohertyy/punk-api-project/static/css/main.eb2683b7.css.map",
-    "main.f52a26ad.js.map": "/andrewdohertyy/punk-api-project/static/js/main.f52a26ad.js.map"
+    "main.d62a73df.js.map": "/andrewdohertyy/punk-api-project/static/js/main.d62a73df.js.map"
   },
   "entrypoints": [
     "static/css/main.eb2683b7.css",
-    "static/js/main.f52a26ad.js"
+    "static/js/main.d62a73df.js"
   ]
 }
