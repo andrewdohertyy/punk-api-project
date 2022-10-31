@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import MoreInfo from "./components/MoreInfo/MoreInfo";
 import Footer from "./containers/Footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import brewdog from "./assets/sports.png";
+// import brewdog from "./assets/sports.png";
 import { Link } from "react-router-dom";
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
             <aside>
               {toggleNav && (
                 <Nav
-                  brewdog={brewdog}
+                  // brewdog={brewdog}
                   beers={beers}
                   getBeers={getBeers}
                   setURL={setURL}
@@ -70,7 +70,7 @@ function App() {
                   <img
                     className="image"
                     onClick={hideNav}
-                    src={brewdog}
+                    // src={brewdog}
                     alt=""
                   />
                 </Link>
