@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import { Link } from "react-router-dom";
 
-const Nav = ({ setURL, beers, setBeers, getBeers, brewdog }) => {
+const Nav = ({ setURL, beers, setBeers, getBeers }) => {
 
   //changes the URL when the classic filter is selected
   const getAgeFilter = () => {
@@ -75,7 +75,7 @@ const Nav = ({ setURL, beers, setBeers, getBeers, brewdog }) => {
     <>
       <div>
         <Link id="logo" to="/">
-          <img className="image" src={brewdog} alt="" />
+          <img className="image" alt="" />
         </Link>
       </div>
 
